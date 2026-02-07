@@ -1,4 +1,5 @@
 import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
+import { mcpPlugin } from '@payloadcms/plugin-mcp'
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import { redirectsPlugin } from '@payloadcms/plugin-redirects'
 import { seoPlugin } from '@payloadcms/plugin-seo'
@@ -87,6 +88,14 @@ export const plugins: Plugin[] = [
       fields: ({ defaultFields }) => {
         return [...defaultFields, ...searchFields]
       },
+    },
+  }),
+  mcpPlugin({
+    collections: {
+      pages: { enabled: true },
+      posts: { enabled: true },
+      media: { enabled: { find: true, create: false, update: false, delete: false } },
+      categories: { enabled: true },
     },
   }),
 ]

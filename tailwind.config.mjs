@@ -92,10 +92,14 @@ const config = {
         success: 'hsl(var(--success))',
         error: 'hsl(var(--error))',
         warning: 'hsl(var(--warning))',
+        main: 'hsl(var(--main-color))',
+        'secondary-brand': 'hsl(var(--secondary-color))',
+        'accent-brand': 'hsl(var(--accent-color))',
+        'gray-brand': 'hsl(var(--gray-color))',
       },
       fontFamily: {
-        mono: ['var(--font-geist-mono)'],
-        sans: ['var(--font-geist-sans)'],
+        mono: ['var(--font-mono)'],
+        sans: ['var(--font-sans)'],
       },
       keyframes: {
         'accordion-down': {
