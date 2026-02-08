@@ -31,6 +31,10 @@ lerna-debug.log*
 *.swo
 *~
 
+# Claude Code
+.claude/
+.mcp.json
+
 # OS
 Thumbs.db
 
