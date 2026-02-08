@@ -219,7 +219,7 @@ export interface Page {
       | null;
     media?: (number | null) | Media;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
+  layout: (CallToActionBlock | CardButtonNavigationBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
   meta?: {
     title?: string | null;
     /**
@@ -504,6 +504,18 @@ export interface CallToActionBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'cta';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CardButtonNavigationBlock".
+ */
+export interface CardButtonNavigationBlock {
+  title?: string | null;
+  description?: string | null;
+  href?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'cardButtonNavigation';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1204,6 +1216,7 @@ export interface PagesSelect<T extends boolean = true> {
     | T
     | {
         cta?: T | CallToActionBlockSelect<T>;
+        cardButtonNavigation?: T | CardButtonNavigationBlockSelect<T>;
         content?: T | ContentBlockSelect<T>;
         mediaBlock?: T | MediaBlockSelect<T>;
         archive?: T | ArchiveBlockSelect<T>;
@@ -1244,6 +1257,17 @@ export interface CallToActionBlockSelect<T extends boolean = true> {
             };
         id?: T;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CardButtonNavigationBlock_select".
+ */
+export interface CardButtonNavigationBlockSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  href?: T;
   id?: T;
   blockName?: T;
 }
