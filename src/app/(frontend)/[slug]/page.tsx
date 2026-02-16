@@ -74,6 +74,8 @@ export default async function Page({ params: paramsPromise }: Args) {
 
       {draft && <LivePreviewListener />}
 
+      <h1>Bienvenido a mi Web Prueba</h1>
+
       <RenderHero {...hero} />
       <RenderBlocks blocks={layout} />
     </article>
